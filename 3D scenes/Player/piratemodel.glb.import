@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cjkjan6cn72mk"
-path="res://.godot/imported/piratemodel.glb-08d01f9113c2e0fb407cd3255c2975be.scn"
+path="res://.godot/imported/piratemodel.glb-39a34d7f22646d29a0848d828a4c3415.scn"
 
 [deps]
 
-source_file="res://3D scenes/piratemodel.glb"
-dest_files=["res://.godot/imported/piratemodel.glb-08d01f9113c2e0fb407cd3255c2975be.scn"]
+source_file="res://3D scenes/Player/piratemodel.glb"
+dest_files=["res://.godot/imported/piratemodel.glb-39a34d7f22646d29a0848d828a4c3415.scn"]
 
 [params]
 

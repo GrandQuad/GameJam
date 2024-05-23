@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3jp2e7u4ion5"]
 
-[ext_resource type="PackedScene" uid="uid://40vgpadjwdlt" path="res://3D scenes/Player.tscn" id="1_xpo2h"]
+[ext_resource type="PackedScene" uid="uid://40vgpadjwdlt" path="res://3D scenes/Player/Player.tscn" id="1_xpo2h"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_561ja"]
 
@@ -17,7 +17,7 @@ albedo_color = Color(0, 0.670588, 0, 1)
 shape = SubResource("WorldBoundaryShape3D_561ja")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_3eehv")
 mesh = SubResource("PlaneMesh_oc4v6")
 
