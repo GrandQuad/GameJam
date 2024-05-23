@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0rvgbejxv8ms"
-path.s3tc="res://.godot/imported/piratemodel_piratemodel.png-acde7b4163c8a1a70ec374bf5df4663d.s3tc.ctex"
+path.s3tc="res://.godot/imported/piratemodel_piratemodel.png-f1ff362a2fc1b39aae702f64c2d0b1dc.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://piratemodel_piratemodel.png"
-dest_files=["res://.godot/imported/piratemodel_piratemodel.png-acde7b4163c8a1a70ec374bf5df4663d.s3tc.ctex"]
+source_file="res://3D scenes/piratemodel_piratemodel.png"
+dest_files=["res://.godot/imported/piratemodel_piratemodel.png-f1ff362a2fc1b39aae702f64c2d0b1dc.s3tc.ctex"]
 
 [params]
 
