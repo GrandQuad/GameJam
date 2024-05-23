@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://40vgpadjwdlt"]
+
+[ext_resource type="Script" path="res://3D scenes/Pirate.gd" id="1_mlj04"]
+[ext_resource type="PackedScene" uid="uid://cjkjan6cn72mk" path="res://3D scenes/piratemodel.glb" id="1_q8urr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1k6rx"]
+
+[node name="Player" type="Node3D"]
+
+[node name="Pirate" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.998259, 0.0589753, 0, -0.0589753, 0.998259, 0, 0, 0, 1, 1.96939, -0.629025, 0.13498)
+script = ExtResource("1_mlj04")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pirate"]
+transform = Transform3D(1, 2.98023e-08, 0, 0, 1, 0, 0, 0, 1, 0.613623, 0.191867, -0.444613)
+shape = SubResource("CapsuleShape3D_1k6rx")
+
+[node name="piratemodel" parent="Pirate/CollisionShape3D" instance=ExtResource("1_q8urr")]
+transform = Transform3D(0.97866, -0.205487, 0, 0.205487, 0.978659, 0, 0, 0, 0.999999, -2.92343, -0.0341829, -0.207295)
