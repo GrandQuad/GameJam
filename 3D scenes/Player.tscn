@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://40vgpadjwdlt"]
+[gd_scene load_steps=4 format=3 uid="uid://40vgpadjwdlt"]
 
 [ext_resource type="Script" path="res://3D scenes/Pirate.gd" id="1_mlj04"]
 [ext_resource type="PackedScene" uid="uid://cjkjan6cn72mk" path="res://3D scenes/piratemodel.glb" id="1_q8urr"]
@@ -6,13 +6,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1k6rx"]
 radius = 3.32318
 height = 12.1488
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ybhr1"]
-size = Vector3(0.257813, 0.001, 0.463135)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i628q"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_48a5e"]
 
 [node name="Player" type="Node3D"]
 
@@ -27,17 +20,7 @@ shape = SubResource("CapsuleShape3D_1k6rx")
 [node name="piratemodel" parent="Pirate/CollisionShape3D" instance=ExtResource("1_q8urr")]
 transform = Transform3D(0.999348, -0.0361208, 0, 0.0361206, 0.999347, 0, 0, 0, 0.999999, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.26892, 3.63103, 20.6735)
-fov = 90.7235
-
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, -4.842, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0188646, 0.0366901, -0.0450779)
-shape = SubResource("BoxShape3D_ybhr1")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-material_override = SubResource("StandardMaterial3D_i628q")
-mesh = SubResource("PlaneMesh_48a5e")
+[node name="Camera3D" type="Camera3D" parent="Pirate"]
+transform = Transform3D(0.0610485, 0.3577, -0.931839, 0, 0.933581, 0.358368, 0.998135, -0.0218778, 0.0569937, -11.3774, 9.02574, 1.70291)
+fov = 100.3
+near = 0.054

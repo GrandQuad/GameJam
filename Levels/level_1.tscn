@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3jp2e7u4ion5"]
+
+[ext_resource type="PackedScene" uid="uid://40vgpadjwdlt" path="res://3D scenes/Player.tscn" id="1_xpo2h"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_561ja"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3eehv"]
+albedo_color = Color(0, 0.670588, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_oc4v6"]
+
+[node name="Level_1" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_561ja")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_3eehv")
+mesh = SubResource("PlaneMesh_oc4v6")
+
+[node name="Player" parent="." instance=ExtResource("1_xpo2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75122, 6.77731, 2.88227)
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
