@@ -1,6 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://do4o5lw6ajqxb"]
+[gd_scene load_steps=8 format=3 uid="uid://do4o5lw6ajqxb"]
+
+[ext_resource type="PackedScene" uid="uid://b0qfuo58a37t1" path="res://3D scenes/Lamp/lamp.tscn" id="1_htjx3"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_q8bcn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f6i7y"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ak6yh"]
+
+[sub_resource type="Sky" id="Sky_s8k6s"]
+sky_material = SubResource("ProceduralSkyMaterial_ak6yh")
+
+[sub_resource type="Environment" id="Environment_rm5u3"]
+background_mode = 2
+sky = SubResource("Sky_s8k6s")
+tonemap_mode = 1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ovh1e"]
 
 [node name="Level_2" type="Node3D"]
 
@@ -10,3 +26,18 @@
 shape = SubResource("WorldBoundaryShape3D_q8bcn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_f6i7y")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.842485, 0.148079, -0.517969, 0, 0.961481, 0.274872, 0.53872, -0.231575, 0.810033, -3.90329, 5.78198, 6.40637)
+fov = 73.405
+
+[node name="lamp" parent="." instance=ExtResource("1_htjx3")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rm5u3")
+camera_attributes = SubResource("CameraAttributesPractical_ovh1e")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.051325, 0.998682, 0, -0.998682, -0.051325, 0, 36.1423, -1.2518)

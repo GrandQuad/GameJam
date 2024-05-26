@@ -12,12 +12,23 @@ config_version=5
 
 config/name="GameJam"
 run/main_scene="res://Levels/menu.tscn"
-config/features=PackedStringArray("4.2", "Mobile")
+config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://Assets/icon.svg"
+
+[autoload]
+
+Signals="*res://signals.gd"
 
 [dotnet]
 
 project/assembly_name="GameJam"
+
+[importer_defaults]
+
+animation_library={
+"animation/fps": 60.0,
+"gltf/embedded_image_handling": 0
+}
 
 [input]
 

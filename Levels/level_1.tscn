@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3jp2e7u4ion5"]
+[gd_scene load_steps=11 format=3 uid="uid://d3jp2e7u4ion5"]
 
 [ext_resource type="PackedScene" uid="uid://40vgpadjwdlt" path="res://3D scenes/Player/Player.tscn" id="1_xpo2h"]
+[ext_resource type="PackedScene" uid="uid://b0qfuo58a37t1" path="res://3D scenes/Lamp/lamp.tscn" id="2_ebf5m"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_561ja"]
 
@@ -8,6 +9,21 @@
 albedo_color = Color(0, 0.670588, 0, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_oc4v6"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8sudj"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ehwwm"]
+
+[sub_resource type="Sky" id="Sky_mw1ab"]
+sky_material = SubResource("ProceduralSkyMaterial_ehwwm")
+
+[sub_resource type="Environment" id="Environment_a5lxn"]
+background_mode = 2
+sky = SubResource("Sky_mw1ab")
+tonemap_mode = 1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_kiiyj"]
 
 [node name="Level_1" type="Node3D"]
 
@@ -21,9 +37,24 @@ transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_3eehv")
 mesh = SubResource("PlaneMesh_oc4v6")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="StaticBody3D/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_8sudj")
+
 [node name="Player" parent="." instance=ExtResource("1_xpo2h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.75122, 6.77731, 2.88227)
 
 [node name="Light" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25.0318, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 0.528438, 0.848972, 0, -0.848972, 0.528438, 0.639381, -0.691217, -1.89104)
+shadow_enabled = true
+
+[node name="Lamp" parent="." instance=ExtResource("2_ebf5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.50482, 0.262939, -5.79094)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_a5lxn")
+camera_attributes = SubResource("CameraAttributesPractical_kiiyj")
